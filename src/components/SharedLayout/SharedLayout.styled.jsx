@@ -11,4 +11,8 @@ export const NavLinkHeader = styled(NavLink)`
   &:hover {
     color: red;
   }
+  &.active {
+    color: #ff4500;
+    text-decoration: underline;
+  }
 `;

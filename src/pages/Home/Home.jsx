@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { fetchTrendingMovies } from 'apiMovies/fetchMovies';
 import { useState } from 'react';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { TrerndFilmsNav } from './Home.styled';
 export const Home = () => {
   const [trendFilmsArry, setTrendFilmsArry] = useState([]);
@@ -17,11 +17,13 @@ export const Home = () => {
   }, []);
   return (
     <>
-      <h1>Trending Today</h1>
+      <h1>Trending today</h1>
       <TrerndFilmsNav>
         {trendFilmsArry.map(elem => {
           return elem.title ? (
-              <NavLink key={elem.id} to={`/movies/` + elem.id}>{elem.title}</NavLink>
+            <NavLink key={elem.id} to={`/movies/` + elem.id}>
+              {elem.title}
+            </NavLink>
           ) : null;
         })}
       </TrerndFilmsNav>
